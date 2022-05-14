@@ -11,11 +11,7 @@ namespace FlowFreeGame.Menu
         [SerializeField] private Text text;
         [SerializeField] private Text textRight;
         [SerializeField] private Button button;
-
-        private void Start()
-        {
-            button.onClick.AddListener(() => OnSlotButtonClick());
-        }
+        [SerializeField] private RectTransform rectTransform;
 
         public void SetCategory(int cat)
         {
@@ -25,6 +21,11 @@ namespace FlowFreeGame.Menu
         public void SetSlot(int slot)
         {
             slotIndex = slot;
+        }
+
+        public RectTransform GetButonRectTransform()
+        {
+            return rectTransform;
         }
 
         public void SetText(string tex, Color c)

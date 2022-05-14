@@ -8,6 +8,7 @@ namespace FlowFreeGame.Menu
         [SerializeField] Image background;
         [SerializeField] Image line;
         [SerializeField] Text text;
+        [SerializeField] RectTransform rectTransform;
 
         public void SetName(string name)
         {
@@ -17,6 +18,10 @@ namespace FlowFreeGame.Menu
         {
             line.color = color;
             background.color = new Color(color.r, color.g, color.b, 0.2f);
+        }
+        public RectTransform GetRectTransform()
+        {
+            return rectTransform;
         }
 
     }

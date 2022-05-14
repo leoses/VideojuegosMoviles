@@ -97,6 +97,7 @@ MonoBehaviour:
   background: {fileID: 6956693753123351658}
   line: {fileID: 5419192380793123998}
   text: {fileID: 7964089708731288681}
+  rectTransform: {fileID: 1743743357835849789}
 --- !u!1 &2090002026829161097
 GameObject:
   m_ObjectHideFlags: 0
