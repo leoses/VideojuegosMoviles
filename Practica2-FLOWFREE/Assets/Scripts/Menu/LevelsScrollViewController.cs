@@ -12,6 +12,12 @@ namespace FlowFreeGame.Menu
         private Color[] pipesColor;
         private Text dimensionsText;
 
+        [SerializeField] private RectTransform buttonsAreaRect;
+        [SerializeField] private RectTransform oneButtonAreaRect;
+        [SerializeField] private GameObject verticalZone;
+        [SerializeField] private GameObject filaZone;
+        [SerializeField] private GameObject textsZone;
+        [SerializeField] private GameObject buttonsZone;
         [SerializeField] private LevelButtonItem levelBtnPref;
         [SerializeField] private ContentScrollScript contentScroll;
 
@@ -32,8 +38,11 @@ namespace FlowFreeGame.Menu
 
             bool nextLvlsBlockeds = false;
             int conAct = -1;
-            ContentScrollScript levelBtnParentAux = new ContentScrollScript();
+            int conAct2 = -1;
+            GameObject fila = new GameObject();
+            GameObject tandaNiveles = new GameObject();
 
+            float buttonAreaWidth = 0.0f;
             for (int i = 0; i < numberOfLevels; i++)
             {
                 act.levelIndex = i;
@@ -48,16 +57,27 @@ namespace FlowFreeGame.Menu
                         nextLvlsBlockeds = true;
                 }
 
+                //Nueva tanda de 30 Niveles
                 if (i / 30 > conAct)
                 {
                     conAct++;
                     dimensionsText.text = GameManager.Instance.GetCategories()[act.category].lotes[slotIndex].nameEach30levels[conAct];
-                    levelBtnParentAux = Instantiate(contentScroll, transform);
+                    tandaNiveles = Instantiate(verticalZone, buttonsZone.transform);
+                    buttonAreaWidth += (oneButtonAreaRect.rect.width * 5) + 50.0f;
+                    Instantiate(contentScroll, textsZone.transform);
                 }
 
-                LevelButtonItem levelBtnObj = Instantiate(levelBtnPref, levelBtnParentAux.GetGridObject().transform);
+                //Nueva Fila
+                if(i / 5 > conAct2)
+                {
+                    conAct2++;
+                    fila = Instantiate(filaZone, tandaNiveles.transform);
+                }
+
+                LevelButtonItem levelBtnObj = Instantiate(levelBtnPref, fila.transform);
                 levelBtnObj.SetLvl(i);
                 levelBtnObj.SetColor(pipesColor[i / 30]);
+
                 if (!blocked || !nextLvlsBlockeds)
                 {
                     levelBtnObj.SetButtonInteractable(true);
@@ -77,6 +97,9 @@ namespace FlowFreeGame.Menu
                     levelBtnObj.GetTickObject().SetActive(true);
                 }
             }
+            Debug.Log(buttonAreaWidth);
+            buttonsAreaRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, buttonAreaWidth);
+            
         }
     }
 }
