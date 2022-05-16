@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameFlowFree.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Remake/LevelSelectorRemake.unity
+    guid: b8ad5fc381a053a4b915bf5f7ebbeafe
+  - enabled: 1
+    path: Assets/Scenes/Remake/MainMenuRemake.unity
+    guid: 1b602729eaebe2143a4a791b264270e5
   m_configObjects: {}

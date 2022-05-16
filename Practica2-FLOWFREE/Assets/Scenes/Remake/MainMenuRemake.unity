@@ -836,7 +836,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Levels
+  m_Text: <color=#ff0000ff>L</color><color=#00ff00ff>e</color><color=#0000ffff>v</color><color=#ffff00ff>e</color><color=#ffa500ff>l</color><color=#00ffffff>s</color>
 --- !u!222 &1967414084
 CanvasRenderer:
   m_ObjectHideFlags: 0

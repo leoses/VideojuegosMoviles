@@ -10,12 +10,7 @@ namespace FlowFreeGame.Menu
         [SerializeField] private CategoryTextItem CatPref;
         [SerializeField] private SlotButtonItem SlotPref;
         [SerializeField] private RectTransform buttonAreaRect;
-        //[SerializeField] private Text l1Text;
-        //[SerializeField] private Text e1Text;
-        //[SerializeField] private Text vText;
-        //[SerializeField] private Text e2Text;
-        //[SerializeField] private Text l2Text;
-        //[SerializeField] private Text sText;
+        [SerializeField] private Text levels;
 
         private Color[] lettersColors;
         private void Start()
@@ -25,12 +20,8 @@ namespace FlowFreeGame.Menu
 
             buttonAreaRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 600);
 
-            //l1Text.color = lettersColors[0];
-            //e1Text.color = lettersColors[1];
-            //vText.color = lettersColors[2];
-            //e2Text.color = lettersColors[3];
-            //l2Text.color = lettersColors[4];
-            //sText.color = lettersColors[5];
+            levels.text = "<color=#" + ColorUtility.ToHtmlStringRGBA(lettersColors[0]) + ">L</color><color=#" + ColorUtility.ToHtmlStringRGBA(lettersColors[1]) + ">e</color><color=#" + ColorUtility.ToHtmlStringRGBA(lettersColors[2]) + ">v</color><color=#" + ColorUtility.ToHtmlStringRGBA(lettersColors[3]) + ">e</color><color=#" + ColorUtility.ToHtmlStringRGBA(lettersColors[4]) + ">l</color><color=#" + ColorUtility.ToHtmlStringRGBA(lettersColors[5]) + ">s</color>";
+            
             LoadLevelButtons();
         }
 
