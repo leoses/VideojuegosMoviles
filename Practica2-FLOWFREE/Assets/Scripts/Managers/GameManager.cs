@@ -187,6 +187,7 @@ public class GameManager : MonoBehaviour
         if (clues - 1 >= 0)
         {
             clues--;
+            SaveState();
             return true;
         }
         else return false;
@@ -200,6 +201,7 @@ public class GameManager : MonoBehaviour
     void OnRewardedAdSuccess()
     {
         clues++;
+        SaveState();
         if (levelManager != null) levelManager.SetClueText();
     }
 

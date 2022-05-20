@@ -33,13 +33,13 @@ Mirando el logcat, salen errores de UnityAnalytics:
 
 - Si se está creando un flujo, se vuelve al punto de partida y no se suelta ¡no se puede volver a crear el flujo! Al salir del "sumidero" el flujo no se crea.
 
-- Si se pide una pista y se cierra el juego o se da a volver (sin superar el nivel) ¡la pista se recupera!
+- ~~Si se pide una pista y se cierra el juego o se da a volver (sin superar el nivel) ¡la pista se recupera!~~
 
-- Si se ve un anuncio recompensado, se consigue una pista y se cierra el juego o se da a volver (sin superar el nivel) ¡la pista conseguida por el anuncio desaparece!
+- ~~Si se ve un anuncio recompensado, se consigue una pista y se cierra el juego o se da a volver (sin superar el nivel) ¡la pista conseguida por el anuncio desaparece!~~
 
 - Los bordes del tablero no se muestran bien si el nivel tiene "huecos", como en el primer nivel de Rectangles - Hourglass pack
 
-- En la escena de selección de nivel dentro del lote no se indica con claridad que los niveles están bloqueados (con el candado usado en el juego original)
+- ~~En la escena de selección de nivel dentro del lote no se indica con claridad que los niveles están bloqueados (con el candado usado en el juego original)~~
 
 - El juego no se adapta correctamente a distintas resoluciones, requisito indispensable de la práctica:
     - En relación de aspecto 1:1 (cuadrado):
@@ -56,7 +56,7 @@ Mirando el logcat, salen errores de UnityAnalytics:
         - ~~Además, el banner tapa parcialmente la última opción.~~
         - En la escena de selección del nivel dentro del lote salen todas las filas pero la última está cortada y no se ven los números.
 
-- La forma de poner las cabeceras de color letra por letra es mejorable. Unity soporta texto enriquecido (https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html) de modo que se puede cambiar el color de un UnityEngine.UI.Text como se quiera, lo que evita tener que meter un game object por letra y cambiar cada una individualmente.
+- ~~La forma de poner las cabeceras de color letra por letra es mejorable. Unity soporta texto enriquecido (https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html) de modo que se puede cambiar el color de un UnityEngine.UI.Text como se quiera, lo que evita tener que meter un game object por letra y cambiar cada una individualmente.~~
 
 - Igual que tenéis el LevelManager al que llama el GameManager, deberíais haber tenido algo equivalente en las otras dos escenas.
     - Por ejemplo, vuestro componente SlotsScrollViewController busca al GameManager para preguntarle qué hacer, en lugar de que el flujo vaya al contrario.

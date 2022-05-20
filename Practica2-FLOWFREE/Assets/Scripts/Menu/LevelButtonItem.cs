@@ -13,12 +13,14 @@ namespace FlowFreeGame.Menu
         [SerializeField] private Button button;
         [SerializeField] private GameObject starObject;
         [SerializeField] private GameObject tickObject;
+        [SerializeField] private GameObject lockedObject;
 
         private void Awake()
         {
-            button.onClick.AddListener(() => OnLevelButtonClick());
+            //button.onClick.AddListener(() => OnLevelButtonClick());
             starObject.SetActive(false);
             tickObject.SetActive(false);
+            lockedObject.SetActive(false);
         }
         public void SetColor(Color color)
         {
@@ -50,6 +52,11 @@ namespace FlowFreeGame.Menu
         public GameObject GetTickObject()
         {
             return tickObject;
+        }
+
+        public GameObject GetLockedObject()
+        {
+            return lockedObject;
         }
     }
 }

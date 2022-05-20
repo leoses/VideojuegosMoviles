@@ -86,8 +86,9 @@ namespace FlowFreeGame.Menu
                 {
                     levelBtnObj.SetButtonInteractable(false);
                 }
-                
-                //En función de si el nivel está perfecto o no activamos la estrella o el tick
+
+
+                //En función de si el nivel está perfecto o no activamos la estrella, el tick o el candado
                 if (GameManager.Instance.GetIsLevelPerfect(act))
                 {
                     levelBtnObj.GetStarObject().SetActive(true);
@@ -96,6 +97,13 @@ namespace FlowFreeGame.Menu
                 {
                     levelBtnObj.GetTickObject().SetActive(true);
                 }
+                else if(GameManager.Instance.GetLevelBestMoves(act) == 0 
+                    && GameManager.Instance.GetCategories()[act.category].lotes[act.slotIndex].levelblocked
+                    && act.levelIndex != 0 && GameManager.Instance.GetLevelBestMoves(prevLevel) == 0) 
+                {
+                    levelBtnObj.GetLockedObject().SetActive(true);
+                }
+
             }
             Debug.Log(buttonAreaWidth);
             buttonsAreaRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, buttonAreaWidth);

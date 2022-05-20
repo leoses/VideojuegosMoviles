@@ -47,7 +47,7 @@ namespace FlowFreeGame
 
         public void GoToLevelScene()
         {
-            GameManager.Instance.LoadScene("LevelSelector");
+            GameManager.Instance.LoadScene("LevelSelectorRemake");
         }
 
         public void UseClue()
