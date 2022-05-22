@@ -144,7 +144,8 @@ namespace FlowFreeGame
 
                     spawnedTile.SetPosTile(pos);
                     //Ponemos paredes en los bordes del tablero
-                    bool[] w = new bool[4] { pos.y - 1 == -(m.GetHeight()), pos.x + 1 == m.GetWidth(), pos.y + 1 > 0 , pos.x - 1 < 0 };
+                   // bool[] w = new bool[4] { pos.y - 1 == -(m.GetHeight()), pos.x + 1 == m.GetWidth(), pos.y + 1 > 0 , pos.x - 1 < 0 };
+                    bool[] w = new bool[4] { false, false, false, false };
                     
                     if (walls.ContainsKey(pos))
                     {
@@ -165,6 +166,9 @@ namespace FlowFreeGame
             float camHeight = Camera.main.orthographicSize * 2.0f;
             float camWidth = camHeight * Camera.main.aspect;
 
+            Debug.Log("Screen width: " + Screen.width);
+            Debug.Log("Cam width: " + camWidth);
+
             float topFactor = topHud.rect.width / topHud.rect.height;
             float bottomFactor = bottomHud.rect.width / bottomHud.rect.height;
 
@@ -179,9 +183,10 @@ namespace FlowFreeGame
             else
                 scaleFactor = tileSizeY;
 
+            Debug.Log("Scalefactor:" + scaleFactor);
             transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
             
-            _cam.transform.position = new Vector3((((float)m.GetWidth() / 2) - 0.5f) * scaleFactor, -((float)m.GetHeight() / 2) * scaleFactor, -10);
+            _cam.transform.position = new Vector3((((float)m.GetWidth() / 2) - 0.5f) * scaleFactor, -(((float)m.GetHeight() / 2.0f) - 0.5f) * scaleFactor + topHeight - (0.6f *scaleFactor), -10);
         }
 
         public Tile GetTileAtPosition(Vector2 pos)

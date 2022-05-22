@@ -13,9 +13,11 @@ Mirando el logcat, salen errores de UnityAnalytics:
 <fecha> 10096 10124 E Unity   : Unable to find method RemoteSettingsUpdateCompleted in [UnityEngine.UnityAnalyticsModule.dll]UnityEngine.RemoteSettings
 <fecha> 10096 10124 E Unity   : Unable to find method RemoteSettingsUpdated in [UnityEngine.UnityAnalyticsModule.dll]UnityEngine.RemoteSettings
 
-- El menú de selección del lote aparece a mitad cuando se lanza la escena, en lugar de situado arriba del todo.
+- ~~El menú de selección del lote aparece a mitad cuando se lanza la escena, en lugar de situado arriba del todo.~~
 
-- El menú de selección del lote se ajusta a los laterales en exceso.
+- ~~El menú de selección del lote se ajusta a los laterales en exceso.~~
+
+- Revisar los marcos.
 
 - Los bordes de los tiles son muy gruesos. Los "sumideros" no aparecen centrados correctamente en sus celdas.
 
@@ -33,28 +35,28 @@ Mirando el logcat, salen errores de UnityAnalytics:
 
 - Si se está creando un flujo, se vuelve al punto de partida y no se suelta ¡no se puede volver a crear el flujo! Al salir del "sumidero" el flujo no se crea.
 
+- Los bordes del tablero no se muestran bien si el nivel tiene "huecos", como en el primer nivel de Rectangles - Hourglass pack
+
 - ~~Si se pide una pista y se cierra el juego o se da a volver (sin superar el nivel) ¡la pista se recupera!~~
 
 - ~~Si se ve un anuncio recompensado, se consigue una pista y se cierra el juego o se da a volver (sin superar el nivel) ¡la pista conseguida por el anuncio desaparece!~~
-
-- Los bordes del tablero no se muestran bien si el nivel tiene "huecos", como en el primer nivel de Rectangles - Hourglass pack
 
 - ~~En la escena de selección de nivel dentro del lote no se indica con claridad que los niveles están bloqueados (con el candado usado en el juego original)~~
 
 - El juego no se adapta correctamente a distintas resoluciones, requisito indispensable de la práctica:
     - En relación de aspecto 1:1 (cuadrado):
         - ~~El scroll view de los lotes (menú principal) no baja más allá de "10x10 Manías", lo que impide jugar los niveles de la categoría "Rectangle"~~
-        - Además, el banner tapa parcialmente la última opción, por lo que dependiendo de la resolución podría incluso quedar prácticamente tapado.
-        - En la escena de selección del nivel dentro del lote, de las "páginas" de 30 niveles solo se ven las filas primeras filas (niveles 1-15) porque el resto quedan fuera de la pantalla. Además, la última fila (niveles 11-15), dependiendo de la resolución puede quedar prácticamente tapada, impidiendo jugar también esos niveles.
+        - ~~ Además, el banner tapa parcialmente la última opción, por lo que dependiendo de la resolución podría incluso quedar prácticamente tapado.~~
+        - ~~En la escena de selección del nivel dentro del lote, de las "páginas" de 30 niveles solo se ven las filas primeras filas (niveles 1-15) porque el resto quedan fuera de la pantalla. Además, la última fila (niveles 11-15), dependiendo de la resolución puede quedar prácticamente tapada, impidiendo jugar también esos niveles.~~
         - En la escena del juego, el tablero se solapa con el HUD y el banner tapa parcialmente, dependiendo de la resolución, los botones inferiores.
-    - En relación de aspecto 2:3 con baja resolución (400x600)
+    - ~~En relación de aspecto 2:3 con baja resolución (400x600)~~
         - ~~El scroll view de los lotes (menú principal) no baja más allá de "Rectangle Pack", lo que impide jugar al lote "Hourglass Pack"~~
-        - Además, el banner tapa parcialmente la última opción.
-        - En la escena de selección del nivel dentro del lote salen todas las filas pero la última queda parcialmente tapada por el banner.
-    - En relación de aspecto 2:3 con baja resolución (1536x2048, iPad 4)
+        - ~~Además, el banner tapa parcialmente la última opción.~~
+        - ~~En la escena de selección del nivel dentro del lote salen todas las filas pero la última queda parcialmente tapada por el banner.~~
+    - ~~En relación de aspecto 2:3 con baja resolución (1536x2048, iPad 4)~~
         - ~~El scroll view de los lotes (menú principal) no baja más allá de "Tower Pack", lo que impide jugar a los lotes "Rectangle Pack" y "Hourglass Pack"~~
         - ~~Además, el banner tapa parcialmente la última opción.~~
-        - En la escena de selección del nivel dentro del lote salen todas las filas pero la última está cortada y no se ven los números.
+        - ~~En la escena de selección del nivel dentro del lote salen todas las filas pero la última está cortada y no se ven los números.~~
 
 - ~~La forma de poner las cabeceras de color letra por letra es mejorable. Unity soporta texto enriquecido (https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html) de modo que se puede cambiar el color de un UnityEngine.UI.Text como se quiera, lo que evita tener que meter un game object por letra y cambiar cada una individualmente.~~
 
