@@ -43,12 +43,12 @@ Mirando el logcat, salen errores de UnityAnalytics:
 
 - ~~En la escena de selección de nivel dentro del lote no se indica con claridad que los niveles están bloqueados (con el candado usado en el juego original)~~
 
-- El juego no se adapta correctamente a distintas resoluciones, requisito indispensable de la práctica:
-    - En relación de aspecto 1:1 (cuadrado):
+- ~~El juego no se adapta correctamente a distintas resoluciones, requisito indispensable de la práctica:~~
+    - ~~En relación de aspecto 1:1 (cuadrado):~~
         - ~~El scroll view de los lotes (menú principal) no baja más allá de "10x10 Manías", lo que impide jugar los niveles de la categoría "Rectangle"~~
-        - ~~ Además, el banner tapa parcialmente la última opción, por lo que dependiendo de la resolución podría incluso quedar prácticamente tapado.~~
+        - ~~Además, el banner tapa parcialmente la última opción, por lo que dependiendo de la resolución podría incluso quedar prácticamente tapado.~~
         - ~~En la escena de selección del nivel dentro del lote, de las "páginas" de 30 niveles solo se ven las filas primeras filas (niveles 1-15) porque el resto quedan fuera de la pantalla. Además, la última fila (niveles 11-15), dependiendo de la resolución puede quedar prácticamente tapada, impidiendo jugar también esos niveles.~~
-        - En la escena del juego, el tablero se solapa con el HUD y el banner tapa parcialmente, dependiendo de la resolución, los botones inferiores.
+        - ~~En la escena del juego, el tablero se solapa con el HUD y el banner tapa parcialmente, dependiendo de la resolución, los botones inferiores.~~
     - ~~En relación de aspecto 2:3 con baja resolución (400x600)~~
         - ~~El scroll view de los lotes (menú principal) no baja más allá de "Rectangle Pack", lo que impide jugar al lote "Hourglass Pack"~~
         - ~~Además, el banner tapa parcialmente la última opción.~~

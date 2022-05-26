@@ -36,7 +36,7 @@ namespace FlowFreeGame
         [SerializeField]
         private Animation boardAnimation;
 
-        private static BoardManager _instance; 
+        private static BoardManager _instance;
 
         public static BoardManager Instance { get { return _instance; } }
 
@@ -80,7 +80,7 @@ namespace FlowFreeGame
 
             boardAnimation.Play();
         }
-        public bool IsPlayingAnimation() 
+        public bool IsPlayingAnimation()
         {
             return boardAnimation.isPlaying;
         }
@@ -92,9 +92,9 @@ namespace FlowFreeGame
             LevelManager.Instance.SetLevelText(lvl.levelIndex + 1, m.GetWidth(), m.GetHeight());
             GenerateGrid();
             SetBoardScale();
-           
+
             if (pipeObject != null) Destroy(pipeObject.gameObject);
-            
+
             pipeObject = Instantiate(pipeControllerPrefab, gameObject.transform);
             pipeObject.SetTotalPipesInBoard(m.GetWidth() * m.GetHeight() - m.GetNumPipes());
             pipeObject.SetScaleFactor(scaleFactor);
@@ -129,10 +129,10 @@ namespace FlowFreeGame
             {
                 for (int j = 0; j < pipes[i].Count; j++)
                 {
-                    Vector2 pos= new Vector2(pipes[i][j].x, pipes[i][j].y);
-                    var spawnedTile = Instantiate(_tilePrefab,pos, Quaternion.identity, boardParent);
+                    Vector2 pos = new Vector2(pipes[i][j].x, pipes[i][j].y);
+                    var spawnedTile = Instantiate(_tilePrefab, pos, Quaternion.identity, boardParent);
                     spawnedTile.name = $"Tile {pipes[i][j].x} {pipes[i][j].y}";
-                    
+
                     //Si eres la primera o la ultima posicion de las tuberias, significa que
                     //eres un circulo
                     if (j == 0 || j == pipes[i].Count - 1)
@@ -144,12 +144,12 @@ namespace FlowFreeGame
 
                     spawnedTile.SetPosTile(pos);
                     //Ponemos paredes en los bordes del tablero
-                   // bool[] w = new bool[4] { pos.y - 1 == -(m.GetHeight()), pos.x + 1 == m.GetWidth(), pos.y + 1 > 0 , pos.x - 1 < 0 };
+                    // bool[] w = new bool[4] { pos.y - 1 == -(m.GetHeight()), pos.x + 1 == m.GetWidth(), pos.y + 1 > 0 , pos.x - 1 < 0 };
                     bool[] w = new bool[4] { false, false, false, false };
-                    
+
                     if (walls.ContainsKey(pos))
                     {
-                        for(int k = 0; k < w.Length; k++)
+                        for (int k = 0; k < w.Length; k++)
                         {
                             if (walls[pos][k]) w[k] = true;
                         }
@@ -166,9 +166,6 @@ namespace FlowFreeGame
             float camHeight = Camera.main.orthographicSize * 2.0f;
             float camWidth = camHeight * Camera.main.aspect;
 
-            Debug.Log("Screen width: " + Screen.width);
-            Debug.Log("Cam width: " + camWidth);
-
             float topFactor = topHud.rect.width / topHud.rect.height;
             float bottomFactor = bottomHud.rect.width / bottomHud.rect.height;
 
@@ -183,10 +180,19 @@ namespace FlowFreeGame
             else
                 scaleFactor = tileSizeY;
 
-            Debug.Log("Scalefactor:" + scaleFactor);
             transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+
+            float halfWidthBoard = scaleFactor * (m.GetWidth()/2.0f);
+            float halfHeightBoard = scaleFactor * (m.GetHeight()/2.0f);
             
-            _cam.transform.position = new Vector3((((float)m.GetWidth() / 2) - 0.5f) * scaleFactor, -(((float)m.GetHeight() / 2.0f) - 0.5f) * scaleFactor + topHeight - (0.6f *scaleFactor), -10);
+            //Cuando empezamos a instanciar tiles, el primero se instancia en el 0,0 del objeto
+            //eso debemos tenerlo en cuenta para colocar el tablero centrado en su zona correspondiente
+            //porque eso significa que la posicion del objeto padre corresponde al centro del primer tile
+            float tileHalfSize = 0.5f * scaleFactor;
+
+            float centerBoard = -camHeight / 2 + ((camHeight - (topHeight + bottomHeight)) / 2 + topHeight) - halfHeightBoard;
+
+            Camera.main.transform.position = new Vector3(transform.position.x + halfWidthBoard - tileHalfSize, transform.position.y + centerBoard + tileHalfSize, -10.0f);
         }
 
         public Tile GetTileAtPosition(Vector2 pos)
@@ -209,7 +215,7 @@ namespace FlowFreeGame
 
 
 
-       
+
 
 
 
