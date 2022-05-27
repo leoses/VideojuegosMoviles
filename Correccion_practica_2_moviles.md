@@ -33,7 +33,7 @@ Mirando el logcat, salen errores de UnityAnalytics:
 
 - ~~Cuando se rompe una pista al crear otro flujo, se quitan las estrellas. Si se rectifica y se evita el corte, el flujo de la pista original vuelve a salir, pero las estrellas no. Sí salen las estrellas si se crea el flujo de nuevo a mano.~~
 
-- Si se está creando un flujo, se vuelve al punto de partida y no se suelta ¡no se puede volver a crear el flujo! Al salir del "sumidero" el flujo no se crea.
+- Si se está creando un flujo, se vuelve al punto de partida y no se suelta ¡no se puede volver a crear el flujo! Al salir del "sumidero" el flujo no se crea. (A Rulo le funka asi que no se a que se refiere ¿?)
 
 - Los bordes del tablero no se muestran bien si el nivel tiene "huecos", como en el primer nivel de Rectangles - Hourglass pack
 

@@ -363,6 +363,12 @@ namespace FlowFreeGame
             while (i != 0)
             {
                 DestroyPipe(pipeRenderer.color, i - 1);
+                //si destruimos y tenian estrellas las quitamos
+                if (clueInPipe.ContainsKey(pipeRenderer.color))
+                {
+                    starsInPipes[pipeRenderer.color][0].SetActive(false);
+                    starsInPipes[pipeRenderer.color][1].SetActive(false);
+                }
                 if (brokePipes.Count > 0)
                 {
                     Tile re = i == 1 ? tileAct : boardManager.GetTileAtPosition(pipeList[pipeRenderer.color][i - 2].GetPositionInBoard());
@@ -386,6 +392,12 @@ namespace FlowFreeGame
             while (i != index)
             {
                 DestroyPipe(c, i - 1);
+                //si destruimos y tenian estrellas las quitamos
+                if (clueInPipe.ContainsKey(pipeRenderer.color))
+                {
+                    starsInPipes[pipeRenderer.color][0].SetActive(false);
+                    starsInPipes[pipeRenderer.color][1].SetActive(false);
+                }
                 if (brokePipes.Count > 0)
                 {
                     Tile re = boardManager.GetTileAtPosition(pipeList[c][i - 2].GetPositionInBoard());
