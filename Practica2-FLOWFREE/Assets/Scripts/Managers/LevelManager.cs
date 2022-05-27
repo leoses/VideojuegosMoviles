@@ -127,6 +127,11 @@ namespace FlowFreeGame
             canvasManager.SetClueText(GameManager.Instance.GetNumClues());
         }
 
+        public void SetIconLevel(Icon icon) 
+        {
+            canvasManager.SetIcon(icon);
+        }
+
         public void LevelCompleted(int moves)
         {            
             LvlActual act = GameManager.Instance.GetLvlActual();

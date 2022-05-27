@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 namespace FlowFreeGame
 {
+    public enum Icon {None,Tick,Star }
     public class GameCanvasManager : MonoBehaviour
     {
         [SerializeField]
@@ -29,7 +30,12 @@ namespace FlowFreeGame
         private Button nextLevelButton;
         [SerializeField]
         private Button prevLevelButton;
-       
+        [SerializeField]
+        private GameObject starIcon;
+        [SerializeField]
+        private GameObject tickIcon;
+
+
 
         //TO DO: quitarlos de aqui y en el inspector llamar a los de gameManager/levelManager
         public void ChangeNextLevel()
@@ -117,6 +123,27 @@ namespace FlowFreeGame
         public void IsPrevLevelButtonInteractuable( bool active)
         {
             prevLevelButton.interactable = active;
+        }
+
+        public void SetIcon(Icon icon)
+        {
+            switch (icon)
+            {
+                case Icon.None:
+                    starIcon.SetActive(false);
+                    tickIcon.SetActive(false);
+                    break;
+                case Icon.Tick:
+                    starIcon.SetActive(false);
+                    tickIcon.SetActive(true);
+                    break;
+                case Icon.Star:
+                    tickIcon.SetActive(false);
+                    starIcon.SetActive(true);
+                    break;
+            }
+
+
         }
     }
 }

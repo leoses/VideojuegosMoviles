@@ -25,7 +25,7 @@ Mirando el logcat, salen errores de UnityAnalytics:
 
 - No hay animaciones de feedback al empezar o terminar un flujo (ANASS)
 
-- No se muestra la estrella o el "tick" junto al tamaño del tablero cuando se vuelve a jugar un nivel ya superado. (ANASS)
+-~~No se muestra la estrella o el "tick" junto al tamaño del tablero cuando se vuelve a jugar un nivel ya superado.~~ (ANASS)
 
 - Si se tiene un flujo a medias de construir no siempre se "reinicia" si se arrastra en posiciones anteriores no contiguas. Solo se puede cambiar el flujo en construcción yendo hacia atrás por el mismo camino, no se puede saltar.
 

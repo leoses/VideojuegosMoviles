@@ -98,6 +98,12 @@ namespace FlowFreeGame
             pipeObject = Instantiate(pipeControllerPrefab, gameObject.transform);
             pipeObject.SetTotalPipesInBoard(m.GetWidth() * m.GetHeight() - m.GetNumPipes());
             pipeObject.SetScaleFactor(scaleFactor);
+
+            if (GameManager.Instance.GetIsLevelPerfect(lvl))
+                LevelManager.Instance.SetIconLevel(Icon.Star);
+            else if (GameManager.Instance.GetLevelBestMoves(lvl)>0)
+                LevelManager.Instance.SetIconLevel(Icon.Tick);
+            else LevelManager.Instance.SetIconLevel(Icon.None);
         }
 
         private void Clear()
