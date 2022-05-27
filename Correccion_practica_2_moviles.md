@@ -31,7 +31,7 @@ Mirando el logcat, salen errores de UnityAnalytics:
 
 - Si se da al aspa de cierre del cuadro de diálogo en lugar del botón de pasar al siguiente nivel se puede seguir con el nivel recién jugado, que no parece tener mucho sentido.
 
-- Cuando se rompe una pista al crear otro flujo, se quitan las estrellas. Si se rectifica y se evita el corte, el flujo de la pista original vuelve a salir, pero las estrellas no. Sí salen las estrellas si se crea el flujo de nuevo a mano.
+- ~~Cuando se rompe una pista al crear otro flujo, se quitan las estrellas. Si se rectifica y se evita el corte, el flujo de la pista original vuelve a salir, pero las estrellas no. Sí salen las estrellas si se crea el flujo de nuevo a mano.~~
 
 - Si se está creando un flujo, se vuelve al punto de partida y no se suelta ¡no se puede volver a crear el flujo! Al salir del "sumidero" el flujo no se crea.
 

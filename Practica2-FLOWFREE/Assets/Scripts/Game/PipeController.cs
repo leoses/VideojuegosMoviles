@@ -345,8 +345,13 @@ namespace FlowFreeGame
                     a.transform.gameObject.SetActive(true);
                     numPipesInBoard++;
                 }
+                //si reconstruimos y tenian estrellas las volvemos a poner
+                if (clueInPipe.ContainsKey(brokePipes[tile].Peek().GetPipeColor()))
+                {
+                    starsInPipes[brokePipes[tile].Peek().GetPipeColor()][0].SetActive(true);
+                    starsInPipes[brokePipes[tile].Peek().GetPipeColor()][1].SetActive(true);
+                }
                 brokePipes.Remove(tile);
-
             }
         }
         /// <summary>
