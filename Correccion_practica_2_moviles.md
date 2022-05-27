@@ -23,13 +23,13 @@ Mirando el logcat, salen errores de UnityAnalytics:
 
 - Las líneas de los flujos son muy gruesas y no son "continuas" (el grosor cambia ligeramente en el centro de los tiles).
 
-- No hay animaciones de feedback al empezar o terminar un flujo
+- No hay animaciones de feedback al empezar o terminar un flujo (ANASS)
 
-- No se muestra la estrella o el "tick" junto al tamaño del tablero cuando se vuelve a jugar un nivel ya superado.
+- No se muestra la estrella o el "tick" junto al tamaño del tablero cuando se vuelve a jugar un nivel ya superado. (ANASS)
 
 - Si se tiene un flujo a medias de construir no siempre se "reinicia" si se arrastra en posiciones anteriores no contiguas. Solo se puede cambiar el flujo en construcción yendo hacia atrás por el mismo camino, no se puede saltar.
 
-- Si se da al aspa de cierre del cuadro de diálogo en lugar del botón de pasar al siguiente nivel se puede seguir con el nivel recién jugado, que no parece tener mucho sentido.
+- Si se da al aspa de cierre del cuadro de diálogo en lugar del botón de pasar al siguiente nivel se puede seguir con el nivel recién jugado, que no parece tener mucho sentido. (ANASS)
 
 - ~~Cuando se rompe una pista al crear otro flujo, se quitan las estrellas. Si se rectifica y se evita el corte, el flujo de la pista original vuelve a salir, pero las estrellas no. Sí salen las estrellas si se crea el flujo de nuevo a mano.~~
 
