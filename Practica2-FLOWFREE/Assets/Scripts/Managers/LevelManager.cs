@@ -69,9 +69,6 @@ namespace FlowFreeGame
             }
         }
 
-      
-       
-       
         public void BackLevel()
         {
             if (!BoardManager.Instance.IsPlayingAnimation())

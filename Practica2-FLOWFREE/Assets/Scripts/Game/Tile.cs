@@ -22,6 +22,9 @@ namespace FlowFreeGame
         [SerializeField]
         private SpriteRenderer wallRenderer;
 
+        [SerializeField]
+        private ParticleSystem particleSystem;
+
         private Vector2 posTile;
         private int index;
         bool[] walls;
@@ -94,5 +97,10 @@ namespace FlowFreeGame
         }
 
         public bool[] GetWalls() { return walls; }
+
+        public ParticleSystem GetParticleSystem()
+        {
+            return particleSystem;
+        }
     }
 }

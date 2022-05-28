@@ -273,6 +273,9 @@ namespace FlowFreeGame
                     continueMoving = false;
                     colorCompleted.Add(pipeRenderer.color);
 
+                    tilePipesIni[pipeRenderer.color].GetParticleSystem().Play();
+                    tileAct.GetParticleSystem().Play();
+
                     //Comprobaci�n de si hay estrellas en ese color
                     if (clueInPipe.ContainsKey(pipeRenderer.color))
                     {

@@ -219,12 +219,6 @@ namespace FlowFreeGame
             pipeObject.enabled = true;
         }
 
-
-
-
-
-
-
         public void FinishAnimation()
         {
             // create a curve to move the GameObject and assign to the clip
@@ -238,9 +232,7 @@ namespace FlowFreeGame
 
             var curve = new AnimationCurve(keys);
 
-
             boardAnimation.clip.SetCurve("Body/RightShoulder/RightArm", typeof(Transform), "position.x", curve);
-
         }
     }
 }

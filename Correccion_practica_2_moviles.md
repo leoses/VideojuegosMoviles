@@ -1,5 +1,5 @@
 # Comentarios Peblo Práctica 2 Móviles
-- El juego en Android se cuelga si se hace una build con IL2CPP.
+- El juego en Android se cuelga si se hace una build con IL2CPP. (SUBIDO A FALTA DE PRUEBAS, HACER BUILD Y TESTEAR QUE NO SE QUEDE COLGADO)
 
 Mirando el logcat, salen errores de UnityAnalytics:
 <fecha> 10096 10124 E Unity   : Unable to find type [UnityEngine.UnityAnalyticsModule.dll]UnityEngine.Analytics.AnalyticsSessionInfo
@@ -23,7 +23,7 @@ Mirando el logcat, salen errores de UnityAnalytics:
 
 - Las líneas de los flujos son muy gruesas y no son "continuas" (el grosor cambia ligeramente en el centro de los tiles).
 
-- No hay animaciones de feedback al empezar o terminar un flujo (ANASS)
+- ~~No hay animaciones de feedback al empezar o terminar un flujo~~
 
 -~~No se muestra la estrella o el "tick" junto al tamaño del tablero cuando se vuelve a jugar un nivel ya superado.~~ (ANASS)
 

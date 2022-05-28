@@ -142,8 +142,6 @@ namespace FlowFreeGame
                     starIcon.SetActive(true);
                     break;
             }
-
-
         }
     }
 }
