@@ -29,7 +29,7 @@ Mirando el logcat, salen errores de UnityAnalytics:
 
 - Si se tiene un flujo a medias de construir no siempre se "reinicia" si se arrastra en posiciones anteriores no contiguas. Solo se puede cambiar el flujo en construcción yendo hacia atrás por el mismo camino, no se puede saltar.
 
-- Si se da al aspa de cierre del cuadro de diálogo en lugar del botón de pasar al siguiente nivel se puede seguir con el nivel recién jugado, que no parece tener mucho sentido. (ANASS)
+- Si se da al aspa de cierre del cuadro de diálogo en lugar del botón de pasar al siguiente nivel se puede seguir con el nivel recién jugado, que no parece tener mucho sentido. (ANASS) (Esto está así en el juego asi que xD)
 
 - ~~Cuando se rompe una pista al crear otro flujo, se quitan las estrellas. Si se rectifica y se evita el corte, el flujo de la pista original vuelve a salir, pero las estrellas no. Sí salen las estrellas si se crea el flujo de nuevo a mano.~~
 
@@ -77,6 +77,7 @@ Mirando el logcat, salen errores de UnityAnalytics:
     - Tenéis un GameManager principalmente pasivo que se dedica a esperar que los demás le ordenen en lugar de ser él quién sabe lo que está pasando y controla la ejecución.
         - Pero, por otro lado, hace algunas cosas que no debería. ¿Por qué muestra un banner en el Start? Eso debería ser decisión de las escenas. ¿Qué pasa si en una no queremos banner por alguna razón?
 
+(ESTO DE AQUÍ NO SE PORQUE DICE ESTO XD, no sé por qué dice que no tiene sentido)
 - En las propiedades de los componentes / scriptable objects no deberíais crear arrays. Por ejemplo en Theme::colorTheme o (peor aún) GameManager::colorsThemes. Es el usuario el que debería elegir el tamaño.
     - En el caso de Theme queremos forzar a que ponga 16, pero eso no se consigue haciendo el new y por tanto no aporta nada…
 
