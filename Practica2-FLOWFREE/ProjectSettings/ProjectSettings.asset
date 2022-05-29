@@ -654,6 +654,7 @@ PlayerSettings:
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
+    Android: 0
     Standalone: 1
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
@@ -726,7 +727,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Analytics: 0
+    Analytics: 1
     Build: 0
     Collab: 0
     Game Performance: 0
@@ -746,11 +747,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 7020ee8a-da8d-49fc-a804-e3ebc2f7d7be
+  cloudProjectId: 9dfc4a19-98bf-4823-9d42-907eb14ef62b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: FlowFree
-  organizationId: raulblas
+  organizationId: eryeluka
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0
