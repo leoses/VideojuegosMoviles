@@ -6,8 +6,6 @@ namespace FlowFreeGame.Menu
 {
     public class LevelsScrollViewController : MonoBehaviour
     {
-        private int contGrids;
-        private int slotIndex;
         private int numberOfLevels;
         private Color[] pipesColor;
         private Text dimensionsText;
@@ -24,7 +22,6 @@ namespace FlowFreeGame.Menu
         private void Start()
         {
             dimensionsText = contentScroll.GetDimensionsText();
-            contGrids = 0;
             pipesColor = GameManager.Instance.GetColorTheme().colorTheme;
             LoadScrollButtons();
         }
@@ -34,7 +31,7 @@ namespace FlowFreeGame.Menu
         {
             LvlActual act = GameManager.Instance.GetLvlActual();
             numberOfLevels = GameManager.Instance.GetLevels()[act.category][act.slotIndex].Length;
-            bool blocked = GameManager.Instance.GetCategories()[act.category].lotes[slotIndex].levelblocked;
+            bool blocked = GameManager.Instance.GetCategories()[act.category].lotes[act.slotIndex].levelblocked;
 
             bool nextLvlsBlockeds = false;
             int conAct = -1;
@@ -61,7 +58,7 @@ namespace FlowFreeGame.Menu
                 if (i / 30 > conAct)
                 {
                     conAct++;
-                    dimensionsText.text = GameManager.Instance.GetCategories()[act.category].lotes[slotIndex].nameEach30levels[conAct];
+                    dimensionsText.text = GameManager.Instance.GetCategories()[act.category].lotes[act.slotIndex].nameEach30levels[conAct];
                     tandaNiveles = Instantiate(verticalZone, buttonsZone.transform);
                     buttonAreaWidth += (oneButtonAreaRect.rect.width * 5) + 50.0f;
                     Instantiate(contentScroll, textsZone.transform);

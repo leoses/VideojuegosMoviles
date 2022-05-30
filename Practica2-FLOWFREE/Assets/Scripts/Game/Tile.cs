@@ -66,7 +66,7 @@ namespace FlowFreeGame
         {
             walls = w;
             wallRenderer.color = _renderer.color;
-            
+           
             for (int i = 0; i < w.Length; i++)
             {
                 if (!w[i]) continue;
@@ -78,7 +78,7 @@ namespace FlowFreeGame
                 o.transform.position = transform.position + v;
                 o.name = $"Muro {posTile.x} {posTile.y}";
             }
-
+           
         }
         public bool IsCircle()
         {

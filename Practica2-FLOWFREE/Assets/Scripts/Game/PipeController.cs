@@ -318,12 +318,14 @@ namespace FlowFreeGame
 
             if (AllPipesCompleted())
             {
-
                 GameManager.Instance.SetScore(moves);
                 if (moves == colorCompleted.Count)
                 {
                     GameManager.Instance.SetPerfect();
+                    LevelManager.Instance.SetIconLevel(Icon.Star);   
                 }
+                else LevelManager.Instance.SetIconLevel(Icon.Tick);
+
                 LevelManager.Instance.LevelCompleted(moves);
                 //Para no actualizar los pipes cuando hemos pasado el nivel
                 enabled = false;

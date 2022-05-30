@@ -115,7 +115,6 @@ namespace FlowFreeGame
 
         public void SetBestText()
         {
-
             canvasManager.SetBestText(GameManager.Instance.GetLevelBestMoves(GameManager.Instance.GetLvlActual()));
         }
 

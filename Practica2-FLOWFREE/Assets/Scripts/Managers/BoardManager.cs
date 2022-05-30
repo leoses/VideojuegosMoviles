@@ -99,9 +99,14 @@ namespace FlowFreeGame
             pipeObject.SetTotalPipesInBoard(m.GetWidth() * m.GetHeight() - m.GetNumPipes());
             pipeObject.SetScaleFactor(scaleFactor);
 
+            SetLevelStatusIcon(lvl);
+        }
+
+        private void SetLevelStatusIcon(LvlActual lvl)
+        {
             if (GameManager.Instance.GetIsLevelPerfect(lvl))
                 LevelManager.Instance.SetIconLevel(Icon.Star);
-            else if (GameManager.Instance.GetLevelBestMoves(lvl)>0)
+            else if (GameManager.Instance.GetLevelBestMoves(lvl) > 0)
                 LevelManager.Instance.SetIconLevel(Icon.Tick);
             else LevelManager.Instance.SetIconLevel(Icon.None);
         }
@@ -129,6 +134,7 @@ namespace FlowFreeGame
             transform.localScale = Vector3.one;
             _tiles = new Dictionary<Vector2, Tile>();
             Dictionary<Vector2, bool[]> walls = m.GetWallsInBoard();
+            List<int> holes = m.Getholes();
             Color[] colorTheme = GameManager.Instance.GetColorTheme().colorTheme;
 
             for (int i = 0; i < m.GetNumPipes(); i++)
@@ -150,8 +156,7 @@ namespace FlowFreeGame
 
                     spawnedTile.SetPosTile(pos);
                     //Ponemos paredes en los bordes del tablero
-                    // bool[] w = new bool[4] { pos.y - 1 == -(m.GetHeight()), pos.x + 1 == m.GetWidth(), pos.y + 1 > 0 , pos.x - 1 < 0 };
-                    bool[] w = new bool[4] { false, false, false, false };
+                    bool[] w = new bool[4] { pos.y - 1 == -(m.GetHeight()), pos.x + 1 == m.GetWidth(), pos.y + 1 > 0 , pos.x - 1 < 0 };
 
                     if (walls.ContainsKey(pos))
                     {
@@ -160,6 +165,8 @@ namespace FlowFreeGame
                             if (walls[pos][k]) w[k] = true;
                         }
                     }
+
+
                     spawnedTile.SetWalls(w);
                     _tiles[new Vector2(pipes[i][j].x, pipes[i][j].y)] = spawnedTile;
                 }

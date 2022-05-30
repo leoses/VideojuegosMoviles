@@ -16,10 +16,12 @@ namespace FlowFreeGame
 
         //Vector2-> posicion en el tablero, int -> cara en la que hay pared
         private Dictionary<Vector2, bool[]> wallsInBoard;
+        private List<Vector2> holesPosInBoard;
 
         public bool Parse(string lvl)
         {
             wallsInBoard = new Dictionary<Vector2, bool[]>();
+            holesPosInBoard = new List<Vector2>();
             string[] data = lvl.Split(';');
             string cabecera = data[0].Replace("+B", "");
             string[] comas = cabecera.Split(',');
@@ -36,6 +38,35 @@ namespace FlowFreeGame
             if (comas.Length > 5 && comas[5].Length > 0)
             {
                 holes = comas[5].Split(':').Select(int.Parse).ToList();
+
+                foreach (int hole in holes)
+                {
+                    holesPosInBoard.Add(GetPosInBoard(hole));
+                }
+
+                foreach(Vector2 holePos in holesPosInBoard)
+                {
+                    List<Vector2> adyacents = GetAdyTilesInBoard(holePos);
+
+                    foreach(Vector2 ady in adyacents)
+                    {
+                        if (!holesPosInBoard.Contains(ady))
+                        {
+                            //Suponemos por defecto adyacente abajo-arriba
+                            int wall = 0;
+                            //Son adyacentes iz-dcha
+                            if (holePos.x + 1 == ady.x) { wall = 1; }
+                            //Son adyacentes dcha-izq
+                            else if (holePos.x - 1 == ady.x) { wall = 3; }
+                            //Son adyacentes arriba-abajo
+                            else if (holePos.y - 1 == ady.y) { wall = 2; }
+
+
+                            AddWallToDictionary(ady, wall );
+                        }
+                    }
+                }
+
             }
             if (comas.Length > 6 && comas[6].Length > 0)
             {
@@ -74,6 +105,17 @@ namespace FlowFreeGame
             }
 
             return true;
+        }
+
+        private List<Vector2> GetAdyTilesInBoard(Vector2 ady)
+        {
+            List<Vector2> adyList = new List<Vector2>();
+            if (ady.x != 0) adyList.Add(new Vector2(ady.x - 1, ady.y));
+            if(ady.x != width - 1) adyList.Add(new Vector2(ady.x + 1, ady.y)); ;
+            if (ady.y != 0) adyList.Add(new Vector2(ady.x, ady.y-1));
+            if (ady.y != height - 1) adyList.Add(new Vector2(ady.x, ady.y+1)); ;
+
+            return adyList;
         }
 
         private Vector2 GetPosInBoard(int valor)
