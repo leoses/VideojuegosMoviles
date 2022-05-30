@@ -492,12 +492,25 @@ namespace FlowFreeGame
                     PaintPipe(act, l[i], centerPipe(l[i - 1], dir), dir);
                 }
                 moves++;
+                LevelManager.Instance.SetMovesText(moves);
                 colorCompleted.Add(color);
+                LevelManager.Instance.SetflowsText(colorCompleted.Count);
 
                 if (AllPipesCompleted())
                 {
-                    //Llamar a levelManager para que muestre la ventanita del siguiente nivel
+                    GameManager.Instance.SetScore(moves);
+                    if (moves == colorCompleted.Count)
+                    {
+                        GameManager.Instance.SetPerfect();
+                        LevelManager.Instance.SetIconLevel(Icon.Star);
+                    }
+                    else LevelManager.Instance.SetIconLevel(Icon.Tick);
+
                     LevelManager.Instance.LevelCompleted(moves);
+                    //Para no actualizar los pipes cuando hemos pasado el nivel
+                    enabled = false;
+                    //Anuncio
+                    GameManager.Instance.LevelSuccess();
                     return;
                 }
             }
